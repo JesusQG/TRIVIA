@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #141414;
+    color: white;
+    text-align: center;
+}
+
+.initialView {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-start {
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+}
