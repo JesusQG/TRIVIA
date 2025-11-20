@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #141414;
+    background: #2d1d58;
     color: white;
     text-align: center;
 }
@@ -9,7 +9,7 @@ body {
     width: 400px;
     margin: 30px auto;
     padding: 20px;
-    background: #1f1f1f;
+    background: #27543775;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }

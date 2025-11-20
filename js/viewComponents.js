@@ -64,3 +64,10 @@ export function InitialView() {
         </section>
     `;
 }
+
+export function playAudio() {
+    const audio = new Audio(new URL('../resources/36. Lost Woods.mp3', import.meta.url));
+    audio.loop = true; 
+    audio.play().catch(err => console.warn('Reproducción de audio falló:', err));
+    return audio;
+}

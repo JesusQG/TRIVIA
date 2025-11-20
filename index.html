@@ -16,9 +16,10 @@
     <div id="app"></div>
 
     <script type="module">
-        import { InitialView } from './js/viewComponents.js';
+        import { InitialView, playAudio } from './js/viewComponents.js';
         const appdiv = document.getElementById('app');
         appdiv.innerHTML = InitialView();
+        playAudio();
     </script>
 </body>
 
