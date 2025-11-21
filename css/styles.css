@@ -1,46 +1,182 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #2d1d58;
-    color: white;
-    text-align: center;
+:root{
+    --bg:#1b1630;
+    --card: rgba(39,84,55,0.45);
+    --accent: gold;
+    --accent-2: #ffd166;
+    --good: #2ecc71;
+    --bad: #e74c3c;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg,#0f0c1b 0%, #2d1d58 100%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+#app{width:100%;max-width:920px}
+
+.card{
+    background: rgba(255,255,255,0.03);
+    border-radius:14px;
+    padding:20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px
+}
+.title{
+    font-size:20px;
+    margin:0
+}
+.small{
+    font-size:14px;
+    opacity:0.9
 }
 
-.initialView {
-    width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #27543775;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+/* Initial view */
+.initialView{
+    max-width:640px;
+    margin:0 auto
 }
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.form-container{
+    display:flex;
+    flex-direction:column;
+    gap:12px
 }
-
-.form-group label {
-    font-size: 18px;
-    margin-bottom: 5px;
-    display: block;
+.form-group label{
+    display:block;
+    margin-bottom:6px
 }
-
 .form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
+.form-group select{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:none
+}
+.btn-start{
+    padding:12px 16px;
+    border-radius:10px;
+    border:none;
+    background:var(--accent);
+    color:#111;
+    font-weight:700;
+    cursor:pointer
 }
 
-.btn-start {
-    padding: 12px;
-    font-size: 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background: gold;
-    color: black;
-    font-weight: bold;
+/* Loading */
+.loading{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px
+}
+.loader{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,0.08);
+    border-top-color:var(--accent);
+    animation:spin 1s linear infinite
+}
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+/* Question view */
+.progress{margin-bottom:8px}
+.question-text{
+    font-size:18px;
+    margin:12px 0
+}
+.answers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px
+}
+.answer-btn{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    background:rgba(205, 217, 163, 0.85);
+    cursor:pointer
+}
+.answer-btn.correct{
+    background:linear-gradient(90deg,var(--good), #27ae60);
+    color:#072;
+}
+.answer-btn.wrong{
+    background:linear-gradient(90deg,var(--bad),#c0392b);
+    color:#fff
+}
+.answer-btn.disabled{
+    opacity:0.6;
+    cursor:not-allowed
+}
+
+.timer{
+    height:14px;
+    background:rgba(255,255,255,0.06);
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:12px
+}
+.timer-bar{
+    height:100%;
+    background:linear-gradient(90deg,var(--accent-2),var(--accent));
+    width:100%;
+    transition:width 0.3s linear
+}
+.timer-warning{
+    box-shadow:0 0 10px 2px rgba(231,76,60,0.25)
+}
+.timer-text{
+    margin-top:6px;
+    font-weight:700
+}
+
+/* Result view */
+.results-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px
+}
+.result-card{
+    padding:12px;
+    border-radius:10px;
+    background:rgba(0,0,0,0.2)
+}
+.controls{
+    display:flex;
+    gap:8px;
+    margin-top:12px
+}
+.btn{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    background:#333;
+    color:#fff;
+    cursor:pointer
+}
+.btn.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.08)
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .answers{
+        grid-template-columns:1fr
+    }
+    .results-grid{
+        grid-template-columns:1fr
+    }
 }
